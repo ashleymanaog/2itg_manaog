@@ -28,11 +28,10 @@
 
 </head>
 
-<body>
-    
+<body>  
+    <img src="iconcalcu.jpg" alt="icon" style="width;150px; height: 200px;">
     <h1>Taxxy: A Tax Calculator</h1>
-
-    <form>
+    <form action="computation.php" method="post">
         <div class="box">
              <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Salary:</label>
         
@@ -54,6 +53,9 @@
             <div class="button">
 		    <button type="compute" class="btn btn-success">Compute</button>
             </div>
+
+            
+
         </div>
        
         
@@ -64,13 +66,15 @@
 
 
     </form>
-    
+</body>
+</html>
     <?php
+    session_start();      
     $_SESSION["salary"] = "";
     $_SESSION["type"] = "";
-    $_SESSION["compute"] = "";
+    
 
-    if(isset($_GET['compute'])) 
+    if(isset($_POST['btn btn-success'])) 
     {
                     
                         $salary = $_GET["salary"] ;
@@ -87,40 +91,56 @@
                             {
                                 $monthlyTax = 0.0;
                                 $annualTax =0.0;
+                                echo "Annual Salary: PHP $salary<br>"; 
+                                echo "Est Annual Tax: PHP $annualTax<br>";
+                                echo "Est Monthly Tax: PHP $monthlyTax<br>" ;
                             }
                             else if($salary >250000.0 && $salary <= 400000.0)
                             {
                                 $excess =  $salary-250000.0;
                                 $annualTax = $excess*0.2;
                                 $monthlyTax = $annualTax/12;
+                                echo "Annual Salary: PHP $salary<br>"; 
+                                echo "Est Annual Tax: PHP $annualTax<br>";
+                                echo "Est Monthly Tax: PHP $monthlyTax<br>" ;
                             }
                             else if($salary >400000.0 && $salary <= 800000.0)
                             {
                                 $excess =  $salary-400000.0;
                                 $annualTax = 30000+$excess*0.25;
                                 $monthlyTax = $annualTax/12;
+                                echo "Annual Salary: PHP $salary<br>"; 
+                                echo "Est Annual Tax: PHP $annualTax<br>";
+                                echo "Est Monthly Tax: PHP $monthlyTax<br>" ;
                             }
                             else if($salary >800000.0 && $salary <= 2000000.0)
                             {
                                 $excess =  $salary-800000.0;
                                 $annualTax = 130000+$excess*0.30;
                                 $monthlyTax = $annualTax/12;
+                                echo "Annual Salary: PHP $salary<br>"; 
+                                echo "Est Annual Tax: PHP $annualTax<br>";
+                                echo "Est Monthly Tax: PHP $monthlyTax<br>" ;
                             }
                             else if($salary >2000000.0 && $salary <= 8000000000.0)
                             {
                                 $excess =  $salary-2000000.0;
                                 $annualTax = 490000+$excess*0.32;
                                 $monthlyTax = $annualTax/12;
+                                echo "Annual Salary: PHP $salary<br>"; 
+                                echo "Est Annual Tax: PHP $annualTax<br>";
+                                echo "Est Monthly Tax: PHP $monthlyTax<br>" ;
                             }
                             else if($salary >8000000.0)
                             {
                                 $excess =  $salary-8000000.0;
                                 $annualTax = 2410000+$excess*0.35;
                                 $monthlyTax = $annualTax/12;
+                                echo "Annual Salary: PHP $salary<br>"; 
+                                echo "Est Annual Tax: PHP $annualTax<br>";
+                                echo "Est Monthly Tax: PHP $monthlyTax<br>" ;
                             }
-                            echo "Annual Salary: PHP $salary<br>"; 
-                            echo "Est Annual Tax: PHP $annualTax<br>";
-                            echo "Est Monthly Tax: PHP $monthlyTax<br>" ;
+                            
                         }
                         if($salaryType == "Bi-monthly" )
                         {
@@ -129,40 +149,56 @@
                             {
                                 $monthlyTax = 0.0;
                                 $annualTax =0.0;
+                                echo "Annual Salary: PHP $salary<br>"; 
+                                echo "Est Annual Tax: PHP $annualTax<br>";
+                                echo "Est Monthly Tax: PHP $monthlyTax<br>" ;
                             }
                             else if($salary >250000.0 && $salary <= 400000.0)
                             {
                                 $excess =  $salary-250000.0;
                                 $annualTax = $excess*0.2;
                                 $monthlyTax = $annualTax/12;
+                                echo "Annual Salary: PHP $salary<br>"; 
+                                echo "Est Annual Tax: PHP $annualTax<br>";
+                                echo "Est Monthly Tax: PHP $monthlyTax<br>" ;
                             }
                             else if($salary >400000.0 && $salary <= 800000.0)
                             {
                                 $excess =  $salary-400000.0;
                                 $annualTax = 30000+$excess*0.25;
                                 $monthlyTax = $annualTax/12;
+                                echo "Annual Salary: PHP $salary<br>"; 
+                                echo "Est Annual Tax: PHP $annualTax<br>";
+                                echo "Est Monthly Tax: PHP $monthlyTax<br>" ;
                             }
                             else if($salary >800000.0 && $salary <= 2000000.0)
                             {
                                 $excess =  $salary-800000.0;
                                 $annualTax = 130000+$excess*0.30;
                                 $monthlyTax = $annualTax/12;
+                                echo "Annual Salary: PHP $salary<br>"; 
+                                echo "Est Annual Tax: PHP $annualTax<br>";
+                                echo "Est Monthly Tax: PHP $monthlyTax<br>" ;
                             }
                             else if($salary >2000000.0 && $salary <= 8000000000.0)
                             {
                                 $excess =  $salary-2000000.0;
                                 $annualTax = 490000+$excess*0.32;
                                 $monthlyTax = $annualTax/12;
+                                echo "Annual Salary: PHP $salary<br>"; 
+                                echo "Est Annual Tax: PHP $annualTax<br>";
+                                echo "Est Monthly Tax: PHP $monthlyTax<br>" ;
                             }
                             else if($salary >8000000.0)
                             {
                                 $excess =  $salary-8000000.0;
                                 $annualTax = 2410000+$excess*0.35;
                                 $monthlyTax = $annualTax/12;
+                                echo "Annual Salary: PHP $salary<br>"; 
+                                echo "Est Annual Tax: PHP $annualTax<br>";
+                                echo "Est Monthly Tax: PHP $monthlyTax<br>" ;
                             }
-                            echo "Annual Salary: PHP $salary<br>"; 
-                            echo "Est Annual Tax: PHP $annualTax<br>";
-                            echo "Est Monthly Tax: PHP $monthlyTax<br>" ;
+                           
                         }
                     }
-        
+        ?> 
